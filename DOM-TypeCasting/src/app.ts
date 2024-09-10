@@ -48,4 +48,41 @@ form.addEventListener("submit", (e: Event) => {
   list.render(doc, type.value, "end");
 });
 
+// Generics
+// The function addUID uses a generic type <T> to allow it to accept an object of any type.
+// This makes the function flexible and reusable for different types of objects.
+// The function generates a random UID and adds it to the object, then returns the new object with the UID.
+
+const addUID = <T extends Object>(obj: T) => {
+  let uid = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
+}
+
+let docOne = addUID({ name: 'yoshi', age: 40 });
+// let docTwo = addUID('hello'); // error
+console.log(docOne);
+// with interfaces
+
+interface Resource<T> {
+  uid: number;
+  resourceName: string;
+  data: T;
+}
+
+const docThree: Resource<string> = {
+  uid: 1,
+  resourceName: 'person',
+  data: 'shaun'
+}
+
+const docFour: Resource<string[]> = {
+  uid: 2,
+  resourceName: 'shoppingList',
+  data: ['bread', 'milk', 'toilet roll']
+}
+
+console.log(docThree, docFour);
+
+
+
 
