@@ -83,6 +83,18 @@ const docFour: Resource<string[]> = {
 
 console.log(docThree, docFour);
 
+// tuples
+let arr = ['ryu', 25, true];
+arr[0] = false;
+arr[1] = 'yoshi';
+arr = [30, false, 'yoshi'];
+
+let tup: [string, number, boolean] = ['ryu', 25, true];
+// tup[0] = false;
+tup[0] = 'ken';
+tup[1] = 30;
+// tup[2] = false; // error: Type 'boolean' is not assignable to type
+
 
 
 

@@ -58,3 +58,13 @@ const docFour = {
     data: ['bread', 'milk', 'toilet roll']
 };
 console.log(docThree, docFour);
+// tuples
+let arr = ['ryu', 25, true];
+arr[0] = false;
+arr[1] = 'yoshi';
+arr = [30, false, 'yoshi'];
+let tup = ['ryu', 25, true];
+// tup[0] = false;
+tup[0] = 'ken';
+tup[1] = 30;
+// tup[2] = false; // error: Type 'boolean' is not assignable to type
